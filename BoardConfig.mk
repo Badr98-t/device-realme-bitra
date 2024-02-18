@@ -24,3 +24,6 @@ TARGET_OTA_ASSERT_DEVICE := RE5473,RE879AL1,bitra
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
+# Oplus Cam
+TARGET_USES_OPLUS_CAMERA := true
