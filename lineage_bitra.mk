@@ -18,14 +18,30 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common derp stuff.
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+# Rise Up 
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 
 # Inherit from device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Build Type
-DERP_BUILDTYPE := Official
+# Device Identifiers
+PRODUCT_BUILD_PROP_OVERRIDES += \
+   RISING_MAINTAINER="Badr98-t" \
+   RISING_CHIPSET="SDM870"
+
+#Rising stuffs 
+WITH_GMS := true
+TARGET_CORE_GMS := true
+TARGET_CORE_GMS_EXTRAS := true
+TARGET_USE_GOOGLE_TELEPHONY := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := false
+USER_BUILD_NO_CHANGELOG := 1
+TARGET_DISABLE_EPPE := true
+INLINE_KERNEL_BUILDING := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_ENABLE_BLUR := false
+
 
 # UDFPS Icons
 EXTRA_UDFPS_ICONS := true
@@ -35,7 +51,7 @@ PRODUCT_NO_CAMERA := true
 TARGET_USES_OPLUS_CAMERA := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := derp_bitra
+PRODUCT_NAME := lineage_bitra
 PRODUCT_DEVICE := bitra
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3370
